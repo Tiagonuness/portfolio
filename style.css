@@ -1,0 +1,126 @@
+@charset "UTF-8";
+
+/* ============ BASE ==============*/
+:root {
+    --cor_background: #00010D;
+    --cor_backgroundsecondcolor: #030033;
+    --cor0: #01000C;
+    --cor1: #A7D5F2;
+    --cor_ahover: #00fff2;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.painel {
+    font-family: "kufam", sans-serif;
+}
+
+
+
+header {
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 33px 9%;
+    background: transparent;
+}
+
+.name {
+    font-family: "inter", sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: white;
+}
+
+.navlist {
+    display: flex;
+}
+
+.navlist a {
+    color: white;
+    margin-left: 60px;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: "kufam", sans-serif;
+}
+
+.navlist a:hover{
+    transition: all .55s ease;
+    color: var(--cor_ahover);
+}
+
+#menu-icon {
+    color: white;
+    font-size: 35px;
+    z-index: 10001;
+    cursor: pointer;
+    display: none;
+}
+
+.painel {
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+    background-image: linear-gradient(to right, var(--cor_background), var(--cor_backgroundsecondcolor));
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 2rem;
+}
+
+section {
+    padding: 0 10%;
+}
+
+.painel-text h1 {
+    font-size: 90px;
+    line-height: 1;
+    color: white;
+    margin: 0 0 45px;
+}
+
+.painel-text h4 {
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.painel-text a {
+    display: inline-block;
+    color: white;
+    background: var(--cor0);
+    border: 1px solid transparent;
+    padding: 12px 30px;
+    font-family: "Inter" ,sans-serif;
+    line-height: 1.4;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 30px;
+    text-transform: uppercase;
+    transition:all .55s ease;
+}
+
+.painel-text a:hover {
+    background: var(--cor1);
+    border: 1px solid white;
+    transform: translateX(8px);
+}
