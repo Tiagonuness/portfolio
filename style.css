@@ -6,12 +6,19 @@
     --cor_backgroundsecondcolor: #030033;
     --cor0: #01000C;
     --cor1: #A7D5F2;
-    --cor_ahover: #00fff2;
+    --corteste: #00fff2;
+    --corahover: #feea6f;
 }
 
 *{
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
+}
+
+*,
+::after
+::before {
     box-sizing: border-box;
 }
 
@@ -23,11 +30,133 @@ a {
     text-decoration: none;
 }
 
-.painel {
-    font-family: "kufam", sans-serif;
+/* ============ BIRDS ==============*/
+.container {
+    z-index: 1;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url(imagens/6205248.jpg) fixed;
+    background-size: cover;
+    height: 100vh;
 }
 
+.bird {
+    background: url(imagens/birds.svg);
+    background-size: auto 100%;
+    width: 88px;
+    height: 125px;
+    will-change: background-position;
+    animation-name: fly-cycle;
+    animation-timing-function: steps(10);
+    animation-iteration-count: infinite;
+}
 
+.bird-one{
+    animation-duration: 1s;
+    animation-delay: -.5s;
+}
+
+.bird-two{
+    animation-duration: .9s;
+    animation-delay: -.75s;
+}
+
+.bird-three{
+    animation-duration: 1.2s;
+    animation-delay: -.25s;
+}
+
+.bird-four{
+    animation-duration: 1.1s;
+    animation-delay: -.5s;
+}
+
+.bird-five{
+    animation-duration: 1.25s;
+    animation-delay: -.75s;
+}
+
+.bird-container{
+    position: absolute;
+    top: 20%;
+    left: -10%;
+    transform: scale(0) translateX(-10vw);
+    will-change: transform;
+    animation-name: fly-right-one;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.bird-container-one{
+    top: 30%;
+    animation-duration: 15s;
+    animation-delay: 0;
+}
+
+.bird-container-two{
+    animation-duration: 16s;
+    animation-delay: 1s;
+}
+
+.bird-container-three{
+    top: 25%;
+    animation-duration: 15.6s;
+    animation-delay: 9.5s;
+}
+
+.bird-container-four{
+    animation-duration: 16s;
+    animation-delay: 10.25s;
+}
+
+.bird-container-five{
+    top: 40%;
+    animation-duration: 16.1s;
+    animation-delay: 9.5s;
+}
+
+@keyframes fly-cycle{
+    100%{
+        background-position: -900px 0;
+    }
+}
+
+@keyframes fly-right-one{
+    0%{
+        transform: scale(.3) translateX(-10vw);
+    }
+
+    10%{
+        transform: translate(10vw, 2vh) scale(.4);
+    }
+
+    20%{
+        transform: translate(30vw, 0) scale(.5);
+    }
+
+    30%{
+        transform: translate(50vw, 4vh) scale(.6);
+    }
+
+    40%{
+        transform: translate(70vw, 2vh) scale(.6);
+    }
+
+    50%{
+        transform: translate(90vw,0) scale(.6);
+    }
+
+    60%{
+        transform: translate(110vw, 0) scale(.6);
+    }
+
+    100%{
+        transform: translate(110vw, 0) scale(.6);
+    }
+}
 
 header {
     position: fixed;
@@ -63,7 +192,7 @@ header {
 
 .navlist a:hover{
     transition: all .55s ease;
-    color: var(--cor_ahover);
+    color: var(--corahover);
 }
 
 #menu-icon {
@@ -75,15 +204,17 @@ header {
 }
 
 .painel {
+    font-family: "kufam", sans-serif;
     height: 100%;
     width: 100%;
     min-height: 100vh;
-    background-image: linear-gradient(to right, var(--cor_background), var(--cor_backgroundsecondcolor));
     position: relative;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
     gap: 2rem;
+    justify-content: center;
+    display: flex;
 }
 
 section {
@@ -93,11 +224,14 @@ section {
 .painel-text h1 {
     font-size: 90px;
     line-height: 1;
-    color: white;
+    color: rgb(255, 255, 255);
     margin: 0 0 45px;
+    letter-spacing: -3px;
 }
 
 .painel-text h4 {
+    justify-content: center;
+    display: flex;
     font-size: 18px;
     font-weight: 600;
     color: white;
