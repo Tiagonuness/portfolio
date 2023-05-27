@@ -8,17 +8,13 @@
     --cor1: #A7D5F2;
     --corteste: #00fff2;
     --corahover: #feea6f;
+
+    --box-shadow: 0px 0px 20px rgb(0 0 0 / 10%);
 }
 
 *{
     padding: 0;
     margin: 0;
-    box-sizing: border-box;
-}
-
-*,
-::after
-::before {
     box-sizing: border-box;
 }
 
@@ -38,7 +34,7 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: url(imagens/6205248.jpg) fixed;
+    background: url(imagens/6205261.jpg) fixed;
     background-size: cover;
     height: 100vh;
 }
@@ -203,6 +199,7 @@ header {
     display: none;
 }
 
+/* ============ LETREIRO PRINCIAL(HOME) ==============*/
 .painel {
     font-family: "kufam", sans-serif;
     height: 100%;
@@ -221,14 +218,44 @@ section {
     padding: 0 10%;
 }
 
+/* ============ Desenvolvedor Full Stack ==============*/
 .painel-text h1 {
-    font-size: 90px;
+    font-size: 70px;
     line-height: 1;
     color: rgb(255, 255, 255);
     margin: 0 0 45px;
     letter-spacing: -3px;
+    border-right: 4px solid;
+    width: 102%;
+    height: 65px;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 2s steps(18), cursor .5s step-end infinite alternate; 
 }
 
+@keyframes cursor{
+    50% {border-color: transparent;}
+}
+
+.full {
+    background: linear-gradient(to right, var(--corteste), #00a79e, #00ccc2);
+    background-size: 400% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientAnimation 8s linear infinite alternate;
+    outline: none;
+}
+
+@keyframes gradientAnimation {
+    0% {
+      background-position-x: 0% 50%;
+    }
+    100% {
+      background-position: 100% 50%;
+    }
+  }
+
+/* ============ Olá, eu sou Tiago Nunes ==============*/
 .painel-text h4 {
     justify-content: center;
     display: flex;
@@ -239,22 +266,60 @@ section {
 }
 
 .painel-text a {
-    display: inline-block;
-    color: white;
-    background: var(--cor0);
-    border: 1px solid transparent;
-    padding: 12px 30px;
     font-family: "Inter" ,sans-serif;
-    line-height: 1.4;
-    font-size: 14px;
-    font-weight: 500;
-    border-radius: 30px;
+    font-size: 15px;
+    font-weight: bold;
+    width: 160px;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
     text-transform: uppercase;
-    transition:all .55s ease;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: box-shadow, transform;
+    transition-property: box-shoadow, transform;
+    background: linear-gradient(129deg, #00fbba, #00b788, #007859, #003d78, #005bb4, #0081ff);
+    background-size: 1600% 1600%;
+
+    -webkit-animation: backgroundButton 55s ease infinite;
+    -moz-animation: backgroundButton 55s ease infinite;
+    -o-animation: backgroundButton 55s ease infinite;
+    animation: backgroundButton 55s ease infinite;
 }
 
-.painel-text a:hover {
-    background: var(--cor1);
-    border: 1px solid white;
-    transform: translateX(8px);
+@-webkit-keyframes backgroundButton {
+    0%{background-position:0% 11%}
+    50%{background-position:100% 90%}
+    100%{background-position:0% 11%}
+}
+@-moz-keyframes backgroundButton {
+    0%{background-position:0% 11%}
+    50%{background-position:100% 90%}
+    100%{background-position:0% 11%}
+}
+@-o-keyframes backgroundButton {
+    0%{background-position:0% 11%}
+    50%{background-position:100% 90%}
+    100%{background-position:0% 11%}
+}
+@keyframes backgroundButton {
+    0%{background-position:0% 11%}
+    50%{background-position:100% 90%}
+    100%{background-position:0% 11%}
+}
+
+.linkedin:hover, .linkedin:focus, .linkedin:active {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.CV:hover, .CV:focus, .CV:active {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
 }
